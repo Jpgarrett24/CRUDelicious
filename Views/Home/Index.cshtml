@@ -1,0 +1,27 @@
+@model Dish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home of the Dishes</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to CRUDelicious</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Check out some recent dishes!</h3>
+            <a href="/new">Add a Dish</a>
+        </section>
+        <section>
+            @foreach (Dish dish in ViewBag.AllDishes)
+            {
+                <p><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+            }
+        </section>
+    </main>
+</body>
+</html>

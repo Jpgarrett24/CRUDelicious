@@ -1,0 +1,52 @@
+@model Dish
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit @ViewBag.Dish.Name</title>
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+    </header>
+    <main>
+        <h1>Edit @ViewBag.Dish.Name</h1>
+        <form asp-action="EditDish" asp-controller="Home" method="post">
+            <span asp-validation-for="Name" class="error"></span>
+            <br>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" value="@ViewBag.Dish.Name">
+            <br>
+            <span asp-validation-for="Chef" class="error"></span>
+            <br>
+            <label asp-for="Chef"></label>
+            <input asp-for="Chef" value="@ViewBag.Dish.Chef">
+            <br>
+            <span asp-validation-for="Calories" class="error"></span>
+            <br>
+            <label asp-for="Calories"></label>
+            <input asp-for="Calories" value="@ViewBag.Dish.Calories">
+            <br>
+            <span asp-validation-for="Tastiness" class="error"></span>
+            <br>
+            <label asp-for="Tastiness"></label>
+            <select asp-for="Tastiness" value="@ViewBag.Dish.Tastiness">
+                <option value="" selected disabled>Select Level</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+            <span asp-validation-for="Description" class="error"></span>
+            <br>
+            <label asp-for="Description"></label>
+            <input asp-for="Description" value="@ViewBag.Dish.Description">
+            <br>
+            <button>Update Dish</button>
+        </form>
+    </main>
+</body>
+</html>
